@@ -2,9 +2,15 @@
 
 namespace PipelineTest;
 
+/// <summary>
+/// Unit tests for the TrimDecorator class.
+/// </summary>
 [TestClass]
 public sealed class TrimDecoratorTests
 {
+    /// <summary>
+    /// Verifies that the TrimDecorator correctly trims leading and trailing whitespace from the input string.
+    /// </summary>
     [TestMethod]
     public void Trim_LeadingAndTrailingSpaces()
     {
@@ -15,6 +21,9 @@ public sealed class TrimDecoratorTests
         Assert.AreEqual("Hello World", result);
     }
 
+    /// <summary>
+    /// Verifies that the TrimDecorator does not remove internal spaces from the input string.
+    /// </summary>
     [TestMethod]
     public void Trim_InternalSpaces()
     {
@@ -25,6 +34,9 @@ public sealed class TrimDecoratorTests
         Assert.AreEqual("Hello   World", result);
     }
 
+    /// <summary>
+    /// Verifies that the TrimDecorator correctly handles an empty string input.
+    /// </summary>
     [TestMethod]
     public void Trim_EmptyString()
     {
@@ -35,6 +47,9 @@ public sealed class TrimDecoratorTests
         Assert.AreEqual("", result);
     }
 
+    /// <summary>
+    /// Verifies that the TrimDecorator correctly handles a string that consists only of whitespace characters.
+    /// </summary>
     [TestMethod]
     public void Trim_OnlyWhitespace()
     {
@@ -45,6 +60,9 @@ public sealed class TrimDecoratorTests
         Assert.AreEqual("", result);
     }
 
+    /// <summary>
+    /// Verifies that the TrimDecorator correctly trims tabs and newlines from the input string.
+    /// </summary>
     [TestMethod]
     public void Trim_TabsAndNewlines()
     {
@@ -55,6 +73,9 @@ public sealed class TrimDecoratorTests
         Assert.AreEqual("Hello World", result);
     }
 
+    /// <summary>
+    /// Verifies that the TrimDecorator does not modify a string that has no leading or trailing whitespace.
+    /// </summary>
     [TestMethod]
     public void Trim_NoOuterWhitespace()
     {

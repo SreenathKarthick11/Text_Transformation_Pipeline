@@ -2,9 +2,15 @@
 
 namespace PipelineTest;
 
+/// <summary>
+/// Unit tests for the MaskDecorator class.
+/// </summary>
 [TestClass]
 public sealed class MaskDecoratorTests
 {
+    /// <summary>
+    /// Verifies that the MaskDecorator correctly replaces characters with asterisks.
+    /// </summary>
     [TestMethod]
     public void Mask_ReplacesCharactersWithAsterisks()
     {
@@ -15,6 +21,9 @@ public sealed class MaskDecoratorTests
         Assert.AreEqual("*****", result);
     }
 
+    /// <summary>
+    /// Verifies that the MaskDecorator preserves spaces in the input string.
+    /// </summary>
     [TestMethod]
     public void Mask_PreservesSpaces()
     {
@@ -25,7 +34,9 @@ public sealed class MaskDecoratorTests
         Assert.AreEqual("*****  *****", result);
     }
 
-
+    /// <summary>
+    /// Verifies that the MaskDecorator handles an empty string input correctly.
+    /// </summary>
     [TestMethod]
     public void Mask_EmptyString()
     {
@@ -35,6 +46,9 @@ public sealed class MaskDecoratorTests
         Assert.AreEqual("", result);
     }
 
+    /// <summary>
+    /// Verifies that the MaskDecorator handles a string with only whitespace correctly.
+    /// </summary>
     [TestMethod]
     public void Mask_OnlyWhitespace()
     {
@@ -45,6 +59,9 @@ public sealed class MaskDecoratorTests
         Assert.AreEqual("     ", result);
     }
 
+    /// <summary>
+    /// Verifies that the MaskDecorator correctly masks numbers and symbols in the input string.
+    /// </summary>
     [TestMethod]
     public void Mask_NumbersAndSymbols()
     {
@@ -55,6 +72,9 @@ public sealed class MaskDecoratorTests
         Assert.AreEqual("*********", result);
     }
 
+    /// <summary>
+    /// Verifies that the MaskDecorator correctly handles newlines and tabs in the input string.
+    /// </summary>
     [TestMethod]
     public void Mask_NewlinesAndTabs()
     {

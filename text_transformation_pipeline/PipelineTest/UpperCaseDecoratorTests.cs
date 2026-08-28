@@ -2,9 +2,15 @@
 
 namespace PipelineTest;
 
+/// <summary>
+/// Unit tests for the UpperCaseDecorator class.
+/// </summary>
 [TestClass]
 public sealed class UpperCaseDecoratorTests
 {
+    /// <summary>
+    /// Verifies that the UpperCaseDecorator correctly converts lowercase text to uppercase.
+    /// </summary>
     [TestMethod]
     public void UpperCase_LowercaseText()
     {
@@ -15,6 +21,9 @@ public sealed class UpperCaseDecoratorTests
         Assert.AreEqual("HELLO WORLD", result);
     }
 
+    /// <summary>
+    /// Verifies that the UpperCaseDecorator correctly converts mixed case text to uppercase.
+    /// </summary>
     [TestMethod]
     public void UpperCase_MixedCaseText()
     {
@@ -25,6 +34,9 @@ public sealed class UpperCaseDecoratorTests
         Assert.AreEqual("HELLO WORLD", result);
     }
 
+    /// <summary>
+    /// Verifies that the UpperCaseDecorator does not change already uppercase text.
+    /// </summary>
     [TestMethod]
     public void UpperCase_UppercaseTextUnchanged()
     {
@@ -35,6 +47,10 @@ public sealed class UpperCaseDecoratorTests
         Assert.AreEqual("HELLO WORLD", result);
     }
 
+    /// <summary>
+    /// Verifies that the UpperCaseDecorator correctly handles text with numbers and symbols,
+    /// converting only the alphabetic characters to uppercase.
+    /// </summary>
     [TestMethod]
     public void UpperCase_NumbersAndSymbols()
     {
@@ -45,6 +61,9 @@ public sealed class UpperCaseDecoratorTests
         Assert.AreEqual("HELLO 123! @#$", result);
     }
 
+    /// <summary>
+    /// Verifies that the UpperCaseDecorator correctly handles an empty string input.
+    /// </summary>
     [TestMethod]
     public void UpperCase_EmptyString()
     {
@@ -55,8 +74,11 @@ public sealed class UpperCaseDecoratorTests
         Assert.AreEqual("", result);
     }
 
+    /// <summary>
+    /// Verifies that the UpperCaseDecorator correctly handles text with whitespace.
+    /// </summary>
     [TestMethod]
-    public void UpperCase_PreservesWhitespace()
+    public void UpperCase_Whitespace()
     {
         ITextProcessor processor = new UpperCaseDecorator(new TextProcessor());
         string result = processor.Process("   hello world   ");

@@ -2,11 +2,17 @@
 
 namespace PipelineTest;
 
+/// <summary>
+/// Unit tests for the TextProcessor class.
+/// </summary>
 [TestClass]
 public sealed class TextProcessorBasicTests
 {
+    /// <summary>
+    /// Verify that Process returns the input string unchanged.
+    /// </summary>
     [TestMethod]
-    public void Process_ReturnsInputUnchanged()
+    public void Process_InputUnchanged()
     {
         ITextProcessor processor = new TextProcessor();
 
@@ -15,8 +21,12 @@ public sealed class TextProcessorBasicTests
         Assert.AreEqual("Hello World", result);
     }
 
+
+    /// <summary>
+    /// Verify that Process handles leading and trailing whitespace correctly.
+    /// </summary>
     [TestMethod]
-    public void Process_PreservesLeadingAndTrailingWhitespace()
+    public void Process_LeadingAndTrailingWhitespace()
     {
         ITextProcessor processor = new TextProcessor();
 
@@ -25,8 +35,11 @@ public sealed class TextProcessorBasicTests
         Assert.AreEqual("   Hello World   ", result);
     }
 
+    /// <summary>
+    /// Verify that Process handles an empty string correctly.
+    /// </summary>  
     [TestMethod]
-    public void Process_HandlesEmptyString()
+    public void Process_EmptyString()
     {
         ITextProcessor processor = new TextProcessor();
 
@@ -35,8 +48,12 @@ public sealed class TextProcessorBasicTests
         Assert.AreEqual("", result);
     }
 
+
+    /// <summary>
+    /// Verify that Process handles special characters correctly.
+    /// </summary>
     [TestMethod]
-    public void Process_PreservesSpecialCharacters()
+    public void Process_SpecialCharacters()
     {
         ITextProcessor processor = new TextProcessor();
 

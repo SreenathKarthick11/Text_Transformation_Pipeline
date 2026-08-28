@@ -2,9 +2,15 @@
 
 namespace PipelineTest;
 
+/// <summary>
+/// Unit tests for the LowerCaseDecorator class.
+/// </summary>
 [TestClass]
 public sealed class LowerCaseDecoratorTests
 {
+    /// <summary>
+    /// Verifies that the LowerCaseDecorator correctly converts uppercase text to lowercase.
+    /// </summary>
     [TestMethod]
     public void LowerCase_UppercaseText()
     {
@@ -15,6 +21,9 @@ public sealed class LowerCaseDecoratorTests
         Assert.AreEqual("hello world", result);
     }
 
+    /// <summary>
+    /// Verifies that the LowerCaseDecorator correctly converts mixed case text to lowercase.
+    /// </summary>
     [TestMethod]
     public void LowerCase_MixedCaseText()
     {
@@ -25,6 +34,9 @@ public sealed class LowerCaseDecoratorTests
         Assert.AreEqual("hello world", result);
     }
 
+    /// <summary>
+    /// Verifies that the LowerCaseDecorator does not change already lowercase text.
+    /// </summary>
     [TestMethod]
     public void LowerCase_LowercaseTextUnchanged()
     {
@@ -35,6 +47,10 @@ public sealed class LowerCaseDecoratorTests
         Assert.AreEqual("hello world", result);
     }
 
+    /// <summary>
+    /// Verifies that the LowerCaseDecorator correctly handles text with numbers and symbols,
+    /// converting only the letters to lowercase.
+    /// </summary>
     [TestMethod]
     public void LowerCase_NumbersAndSymbols()
     {
@@ -45,6 +61,9 @@ public sealed class LowerCaseDecoratorTests
         Assert.AreEqual("hello 123! @#$", result);
     }
 
+    /// <summary>
+    /// Verifies that the LowerCaseDecorator correctly handles an empty string input.
+    /// </summary>
     [TestMethod]
     public void LowerCase_EmptyString()
     {
@@ -55,8 +74,11 @@ public sealed class LowerCaseDecoratorTests
         Assert.AreEqual("", result);
     }
 
+    /// <summary>
+    /// Verifies that the LowerCaseDecorator correctly handles text with whitespace.
+    /// </summary>
     [TestMethod]
-    public void LowerCase_PreservesWhitespace()
+    public void LowerCase_Whitespace()
     {
         ITextProcessor processor = new LowerCaseDecorator(new TextProcessor());
 

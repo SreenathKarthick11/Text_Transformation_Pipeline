@@ -2,9 +2,16 @@
 
 namespace PipelineTest;
 
+/// <summary>
+/// Unit tests for the text processing pipeline,
+/// demonstrating the use of decorators to modify text processing behavior.
+/// </summary>
 [TestClass]
 public sealed class PipelineTests
 {
+    /// <summary>
+    /// Tests the pipeline with a TrimDecortor followed by an UpperCaseDecorator.
+    /// </summary>
     [TestMethod]
     public void Pipeline_TrimThenUpperCase()
     {
@@ -18,7 +25,9 @@ public sealed class PipelineTests
         Assert.AreEqual("HELLO WORLD", result);
     }
 
-
+    /// <summary>
+    /// Tests the pipeline with a TrimDecorator followed by a LowerCaseDecorator.
+    /// </summary>
     [TestMethod]
     public void Pipeline_TrimThenLowerCase()
     {
@@ -32,7 +41,9 @@ public sealed class PipelineTests
         Assert.AreEqual("hello world", result);
     }
 
-
+    /// <summary>
+    /// Tests the pipeline with a TrimDecorator followed by a MaskDecorator.
+    /// </summary>
     [TestMethod]
     public void Pipeline_TrimThenMask()
     {
@@ -46,9 +57,11 @@ public sealed class PipelineTests
         Assert.AreEqual("***** *****", result);
     }
 
-
+    /// <summary>
+    /// Tests the pipeline with a TrimDecorator followed by a MaskDecorator and then an UpperCaseDecorator.
+    /// </summary>
     [TestMethod]
-    public void Pipeline_TrimMaskAndUpperCase()
+    public void Pipeline_TrimMaskUpperCase()
     {
         ITextProcessor processor =
             new UpperCaseDecorator(
@@ -61,22 +74,10 @@ public sealed class PipelineTests
         Assert.AreEqual("***** *****", result);
     }
 
-
-    [TestMethod]
-    public void Pipeline_TrimMaskAndLowerCase()
-    {
-        ITextProcessor processor =
-            new LowerCaseDecorator(
-                new MaskDecorator(
-                    new TrimDecorator(
-                        new TextProcessor())));
-
-        string result = processor.Process("   Hello World   ");
-
-        Assert.AreEqual("***** *****", result);
-    }
-
-
+    /// <summary>
+    /// Tests the pipeline with all decorators applied:
+    /// TrimDecorator, MaskDecorator, UpperCaseDecorator, and LowerCaseDecorator.
+    /// </summary>
     [TestMethod]
     public void Pipeline_UseAllDecorators()
     {
@@ -87,12 +88,14 @@ public sealed class PipelineTests
                         new TrimDecorator(
                             new TextProcessor()))));
 
-        string result = processor.Process("   Hello World   ");
+        string result = processor.Process("   Hello World 12#@5  ");
 
-        Assert.AreEqual("***** *****", result);
+        Assert.AreEqual("***** ***** *****", result);
     }
 
-
+    /// <summary>
+    /// Tests building the pipeline incrementally by wrapping the processor with decorators one by one.
+    /// </summary>
     [TestMethod]
     public void Pipeline_BuiltIncrementally()
     {
@@ -107,7 +110,10 @@ public sealed class PipelineTests
         Assert.AreEqual("***** *****", result);
     }
 
-
+    /// <summary>
+    /// Tests the pipeline with different orderings of UpperCaseDecorator and LowerCaseDecorator 
+    /// to demonstrate the effect of decorator order.
+    /// </summary>
     [TestMethod]
     public void Pipeline_CaseTransformation()
     {
@@ -126,7 +132,9 @@ public sealed class PipelineTests
         Assert.AreEqual("HELLO WORLD",lowerThenUpper.Process("Hello World"));
     }
 
-
+    /// <summary>
+    /// Tests the pipeline with an empty input string.
+    /// </summary>
     [TestMethod]
     public void Pipeline_EmptyInput()
     {
@@ -141,7 +149,9 @@ public sealed class PipelineTests
         Assert.AreEqual("", result);
     }
 
-
+    /// <summary>
+    /// Tests the pipeline with an input string that contains only whitespace characters.
+    /// </summary>
     [TestMethod]
     public void Pipeline_WhitespaceInput()
     {
