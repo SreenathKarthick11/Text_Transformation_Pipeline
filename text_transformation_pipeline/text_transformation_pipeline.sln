@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextPipeline", "TextPipelin
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipelineTest", "PipelineTest\PipelineTest.csproj", "{4E3D93B6-0DED-4285-BF8E-D12DCE7E0BB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{371B539B-1A91-4DC7-8315-5AD7309AF2F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{371B539B-1A91-4DC7-8315-5AD7309AF2F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{371B539B-1A91-4DC7-8315-5AD7309AF2F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E3D93B6-0DED-4285-BF8E-D12DCE7E0BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3D93B6-0DED-4285-BF8E-D12DCE7E0BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E3D93B6-0DED-4285-BF8E-D12DCE7E0BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E3D93B6-0DED-4285-BF8E-D12DCE7E0BB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
