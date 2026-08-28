@@ -11,7 +11,7 @@ public class MaskDecorator(ITextProcessor inner) : TextDecorator(inner)
 
         for (int i = 0; i < processed.Length; i++)
         {
-            if (char.IsLetterOrDigit(processed[i]))
+            if (!char.IsWhiteSpace(processed[i]))
             {
                 processed = processed.Remove(i, 1).Insert(i, "*");
             }
