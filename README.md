@@ -32,7 +32,7 @@ The design consists of:
 - `UpperCaseDecorator` - converts text to uppercase.
 - `LowerCaseDecorator` - converts text to lowercase.
 
->[!Note] **Note**
+>[!Note]
 Each decorator implements the same `ITextProcessor` interface. Therefore, a decorator can wrap either the basic processor or another decorator.
 
 ### Example 
@@ -129,7 +129,7 @@ Here's a condensed version for your README:
 
 ### Limitations
 - **Manual construction** : Nested decorators become verbose and hard to read with many layers. 
-```dotnet
+```c++
   new UpperCaseDecorator(
     new MaskDecorator(
         new TrimDecorator(
@@ -165,9 +165,9 @@ Click Test -> Run all test in the nav bar.
 
 ## References
 
-1. GeeksforGeeks : *Decorator Design Pattern*.
- Available at: [Link](https://www.geeksforgeeks.org/system-design/decorator-pattern/)
+1. GeeksforGeeks : *Decorator Design Pattern*. \
+ Available at: [Link](https://www.geeksforgeeks.org/system-design/decorator-pattern/) \
   Used for understanding the Decorator pattern's structure and components.
-1. Github Repository : *Observer-pattern-demo*. 
-Available at: [Link](https://github.com/chittur/observer-pattern-demo)
+1. Github Repository : *Observer-pattern-demo*. \
+Available at: [Link](https://github.com/chittur/observer-pattern-demo) \
 Referenced for commenting practices and repository coding standards.
