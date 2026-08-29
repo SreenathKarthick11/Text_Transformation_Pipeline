@@ -51,7 +51,7 @@ flowchart LR
     B --> Y
 
     style A fill:#8f4,color:#111
-    style B fill:#1db,clor:#111
+    style B fill:#1cb,color:#111
     linkStyle default stroke:#ffffff
 ```
 
@@ -113,6 +113,32 @@ The test project contains 36 unit tests.
 | **Total**                 |          **37** |
 
 >The test verify the working of each individual decorator and also the **Pipeline Test** verify the working of decorator decompsistions.
+
+Here's a condensed version for your README:
+
+---
+
+## Critical Analysis
+
+### Strengths
+- **Flexible composition** : Transformations can be combined dynamically without a dedicated pipeline class.
+- **Low coupling** : All decorators depend on the `ITextProcessor` interface, enabling any combination of wrappers.
+- **Easy extensibility** : New transformations can be added as decorators without modifying existing code.
+- **Testability** : Each decorator and the full pipeline can be tested independently.
+
+
+### Limitations
+- **Manual construction** : Nested decorators become verbose and hard to read with many layers. 
+```dotnet
+  new UpperCaseDecorator(
+    new MaskDecorator(
+        new TrimDecorator(
+            new TextProcessor())))  
+```
+
+- **Order sensitivity** : Transformation order affects output (e.g., `UpperCase → LowerCase` differs from `LowerCase → UpperCase`). This is inherent to the pattern, not a flaw.
+
+- **Undefined null handling** : Null input behavior is not specified. Production code should define a clear contract (e.g., throw `ArgumentNullException` or treat as empty).
 
 ## Build and Test
 
