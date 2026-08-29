@@ -97,10 +97,13 @@ graph LR
     linkStyle default stroke:#ffffff
 
 ```
+>[!Note]
+The doted lines with arrow signifies implemetation.
+The solid lines with arrow signifies inheritance.
 
 ## Test Summary
 
-The test project contains 36 unit tests.
+The test project contains 37 unit tests.
 
 | Test Class                | Number of Tests |
 | ------------------------- | --------------: |
@@ -112,9 +115,7 @@ The test project contains 36 unit tests.
 | `PipelineTests`           |               9 |
 | **Total**                 |          **37** |
 
->The test verify the working of each individual decorator and also the **Pipeline Test** verify the working of decorator decompsistions.
-
-Here's a condensed version for your README:
+>The test verify the working of each individual decorator and also the **Pipeline Test** verify the working of decorator decomposistions.
 
 ---
 
@@ -142,7 +143,7 @@ Here's a condensed version for your README:
 
 ## Build and Test
 
-#### To build the solution
+### To build the solution
 
 **CLI**
 ```bash
@@ -152,7 +153,7 @@ dotnet build
 ```text
 Click Build -> Build solution in the nav bar.
 ```
-#### To run the test 
+### To run the test 
 
 **CLI**
 ```bash
