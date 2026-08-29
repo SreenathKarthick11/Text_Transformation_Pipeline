@@ -163,3 +163,11 @@ dotnet test
 Click Test -> Run all test in the nav bar.
 ```
 
+## References
+
+1. GeeksforGeeks : *Decorator Design Pattern*.
+ Available at: [Link](https://www.geeksforgeeks.org/system-design/decorator-pattern/)
+  Used for understanding the Decorator pattern's structure and components.
+1. Github Repository : *Observer-pattern-demo*. 
+Available at: [Link](https://github.com/chittur/observer-pattern-demo)
+Referenced for commenting practices and repository coding standards.
