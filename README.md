@@ -109,8 +109,8 @@ The test project contains 36 unit tests.
 | `MaskDecoratorTests`      |               6 |
 | `TrimDecoratorTests`      |               6 |
 | `UpperCaseDecoratorTests` |               6 |
-| `PipelineTests`           |               8 |
-| **Total**                 |          **36** |
+| `PipelineTests`           |               9 |
+| **Total**                 |          **37** |
 
 >The test verify the working of each individual decorator and also the **Pipeline Test** verify the working of decorator decompsistions,
 
