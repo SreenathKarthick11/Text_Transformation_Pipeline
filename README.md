@@ -28,6 +28,7 @@ graph LR
     L --> D
 
     style I fill:#58A6FF,color:#fff,stroke:#fff
+    style O fill:#58A6FF,color:#fff,stroke:#fff
     style T fill:#2F81F7,color:#fff,stroke:#fff
     style D fill:#1E3A5F,color:#fff,stroke:#fff
     style TR fill:#FF7B72,color:#fff,stroke:#fff
