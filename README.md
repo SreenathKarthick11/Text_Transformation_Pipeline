@@ -39,7 +39,7 @@ Each decorator implements the same `ITextProcessor` interface. Therefore, a deco
 
 To convert a stirng , let's say 
 ```text
-X="  sReEnAtH k11     "  to   Y ="SREENATH K11"
+X = "  sReEnAtH k11     "  to   Y = "SREENATH K11"
 ```
 
 We can the use the decorator in the following order. That is we can compose the decorators to achieve the required result.
@@ -50,8 +50,8 @@ flowchart LR
     A --> B("UpperCase Decorator")
     B --> Y
 
-    style A fill:#8f6
-    style B fill:#1fb
+    style A fill:#8f4,color:#111
+    style B fill:#1db,clor:#111
     linkStyle default stroke:#ffffff
 ```
 
@@ -112,7 +112,7 @@ The test project contains 36 unit tests.
 | `PipelineTests`           |               9 |
 | **Total**                 |          **37** |
 
->The test verify the working of each individual decorator and also the **Pipeline Test** verify the working of decorator decompsistions,
+>The test verify the working of each individual decorator and also the **Pipeline Test** verify the working of decorator decompsistions.
 
 ## Build and Test
 
